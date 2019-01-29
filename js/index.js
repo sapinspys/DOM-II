@@ -52,13 +52,40 @@ window.addEventListener("load", function(event) {
 
 // FOCUS and BLUR
 const homeBtn = document.querySelector('.nav-link');
+const logo = document.querySelector('.logo-heading');
 homeBtn.addEventListener('focus', (event) => {
-    event.target.textContent = `Welcome Home!`;
+    logo.textContent = `Welcome Home!`;
 }, true);
 
 homeBtn.addEventListener('blur', (event) => {
-    event.target.textContent = 'Home';
+    logo.textContent = 'Fun Bus';
 }, true);
+
+// SCROLL
+let last_known_scroll_position = 0;
+let ticking = false;
+const navBox = document.querySelector('.nav');
+const scrollCounter = document.createElement('a');
+navBox.appendChild(scrollCounter);
+
+function doSomething(scroll_pos) {
+    scrollCounter.textContent = `Position: ${Math.round(scroll_pos)}`;
+}
+
+window.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(last_known_scroll_position);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
+
+// 
 
 // Using preventDefault to prevent page refresh
 links.forEach(link => link.addEventListener('click', function (event) {
