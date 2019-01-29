@@ -123,9 +123,18 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
+// Nesting similar events and preventing propagation
+const boatContainer = document.querySelector('.content-destination');
+const boatImg = document.querySelector('.content-destination img');
 
+boatContainer.addEventListener('click', (event) => {
+    alert('This is a super fun container!')
+});
 
-
+boatImg.addEventListener('click', (event) => {
+    alert('This is an image of super fun boat!');
+    event.stopPropagation();
+});
 
 // Using preventDefault to prevent page refresh
 links.forEach(link => link.addEventListener('click', function (event) {
