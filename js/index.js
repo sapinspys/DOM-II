@@ -35,7 +35,7 @@ destinationBtns.forEach(btn => btn.addEventListener('click', function (e) {
 
 // DBLCLICK
 window.addEventListener('dblclick', function () {
-    const body = document.querySelector('body').style.background = getRandomColor();
+    const navContainer = document.querySelector('.main-navigation').style.background = 'white';
 });
 
 // Using preventDefault to prevent page refresh
