@@ -1,13 +1,29 @@
 // Your code goes here
 // MOUSEOVER
 const funBusImg = document.querySelector('.intro img');
+const contentImgs = Array.from(document.querySelectorAll('.img-content img'));
+
 funBusImg.addEventListener('mouseover', () => {
-    if (Math.round(Math.floor(Math.random() * 2) + 1) === 1) {
+    let randomNum = Math.round(Math.floor(Math.random() * 3) + 1)
+    if (randomNum === 1) {
         funBusImg.setAttribute('src', `img/fun-bus.jpg`);
-    } else {
+    } else if (randomNum === 2) {
         funBusImg.setAttribute('src', `img/fun-bus2.jpg`);
+    } else {
+        funBusImg.setAttribute('src', `img/fun-bus3.jpeg`);
     }
 });
+
+contentImgs.forEach(image => image.addEventListener('mouseover', () => {
+    let randomNum = Math.round(Math.floor(Math.random() * 3) + 1)
+    if (randomNum === 1) {
+        image.setAttribute('src', `img/fun.jpg`);
+    } else if (randomNum === 2) {
+        image.setAttribute('src', `img/adventure.jpg`);
+    } else {
+        image.setAttribute('src', `img/travel.jpeg`);
+    }
+}));
 
 // KEYDOWN
 window.addEventListener('keydown', event => {
