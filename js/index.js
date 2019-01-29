@@ -114,8 +114,17 @@ window.addEventListener('keydown', (event) => {
         secretInput.style.width = '20%'; 
         navBox.prepend(secretInput);
 
+        let tween = TweenMax.to(logo, 1, { // 1 is animation duration
+            x: -100, // move right 100px
+            autoAlpha: 0, // fade out to opacity 0 and visibility hidden
+            ease: Power3.easeIn // set easing
+        });
+
+        tween.play();
+
         secretInput.addEventListener('select', () => {
-            console.log('You have entered the secret bus page.');
+            alert('You have entered the secret bus page.');
+            tween.reverse()
             logo.textContent = 'Secret Bus';
             const navContainer = document.querySelector('.main-navigation').style.background = getRandomColor();
             document.body.style.background = getRandomColor();
@@ -140,3 +149,4 @@ boatImg.addEventListener('click', (event) => {
 links.forEach(link => link.addEventListener('click', function (event) {
     event.preventDefault();
 }));
+
