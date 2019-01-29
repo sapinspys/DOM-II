@@ -50,6 +50,16 @@ window.addEventListener("load", function(event) {
     alert("This page was loaded successfully!");
 });
 
+// FOCUS and BLUR
+const homeBtn = document.querySelector('.nav-link');
+homeBtn.addEventListener('focus', (event) => {
+    event.target.textContent = `Welcome Home!`;
+}, true);
+
+homeBtn.addEventListener('blur', (event) => {
+    event.target.textContent = 'Home';
+}, true);
+
 // Using preventDefault to prevent page refresh
 links.forEach(link => link.addEventListener('click', function (event) {
     event.preventDefault();
