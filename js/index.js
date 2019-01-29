@@ -25,4 +25,9 @@ function getRandomColor() {
   return color;
 };
 
-// DRAG and DROP
+//  CLICK
+const destinationBtns = document.querySelectorAll('.destination .btn');
+destinationBtns.forEach(btn => btn.addEventListener('click', function (e) {
+    alert('Please contact us! Use the highlighted link on the navigation bar after clicking OK below.');
+    const contactLink = Array.from(document.querySelectorAll('.nav-link'))[3].style.borderBottom = '2px solid purple';
+}));
