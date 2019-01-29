@@ -45,6 +45,11 @@ links.forEach(link => link.addEventListener('mousemove', () => {
     link.style.color = getRandomColor();
 }));
 
+// LOAD
+window.addEventListener("load", function(event) {
+    alert("This page was loaded successfully!");
+});
+
 // Using preventDefault to prevent page refresh
 links.forEach(link => link.addEventListener('click', function (event) {
     event.preventDefault();
