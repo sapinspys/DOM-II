@@ -27,7 +27,14 @@ function getRandomColor() {
 
 //  CLICK
 const destinationBtns = document.querySelectorAll('.destination .btn');
+const links = Array.from(document.querySelectorAll('.nav-link'));
 destinationBtns.forEach(btn => btn.addEventListener('click', function (e) {
     alert('Please contact us! Use the highlighted link on the navigation bar after clicking OK below.');
-    const contactLink = Array.from(document.querySelectorAll('.nav-link'))[3].style.borderBottom = '2px solid purple';
+    links[3].style.borderBottom = '2px solid purple';
+    links[3].style.paddingBottom = '5px';
+}));
+
+// Using preventDefault to prevent page refresh
+links.forEach(link => link.addEventListener('click', function (event) {
+    event.preventDefault();
 }));
