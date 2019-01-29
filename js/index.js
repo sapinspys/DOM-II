@@ -10,12 +10,11 @@ funBusImg.addEventListener('mouseover', function() {
 });
 
 // KEYDOWN
-window.addEventListener('keydown',setRandomColor);
-function setRandomColor(e) {
+window.addEventListener('keydown', function (e) {
     if (e.keyCode == '13') {
         const navContainer = document.querySelector('.main-navigation').style.background = getRandomColor();
     }
-};
+});
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -33,6 +32,11 @@ destinationBtns.forEach(btn => btn.addEventListener('click', function (e) {
     links[3].style.borderBottom = '2px solid purple';
     links[3].style.paddingBottom = '5px';
 }));
+
+// DBLCLICK
+window.addEventListener('dblclick', function () {
+    const body = document.querySelector('body').style.background = getRandomColor();
+});
 
 // Using preventDefault to prevent page refresh
 links.forEach(link => link.addEventListener('click', function (event) {
