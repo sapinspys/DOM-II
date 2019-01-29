@@ -16,6 +16,7 @@ window.addEventListener('keydown', event => {
         document.body.style.background = getRandomColor();
     }
 });
+
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -28,9 +29,10 @@ function getRandomColor() {
 //  CLICK
 const destinationBtns = document.querySelectorAll('.destination .btn');
 const links = Array.from(document.querySelectorAll('.nav-link'));
+
 destinationBtns.forEach(btn => btn.addEventListener('click', () => {
-    alert('Please contact us! Use the highlighted link on the navigation bar after clicking OK below.');
-    links[3].style.borderBottom = '2px solid purple';
+    alert(`Wooooooo! Congratulations. Let's get you signed up! Use the underlined link on the navigation bar after clicking OK below.`);
+    links[3].style.borderBottom = '2px double black';
     links[3].style.paddingBottom = '5px';
 }));
 
@@ -47,14 +49,15 @@ links.forEach(link => link.addEventListener('mousemove', () => {
 
 // LOAD
 window.addEventListener("load", function(event) {
-    alert("This page was loaded successfully!");
+    console.log("This page was loaded successfully!");
 });
 
 // FOCUS and BLUR
 const homeBtn = document.querySelector('.nav-link');
 const logo = document.querySelector('.logo-heading');
+
 homeBtn.addEventListener('focus', (event) => {
-    logo.textContent = `Welcome Home!`;
+    logo.textContent = `Welcome home!`;
 }, true);
 
 homeBtn.addEventListener('blur', (event) => {
@@ -62,11 +65,12 @@ homeBtn.addEventListener('blur', (event) => {
 }, true);
 
 // SCROLL
-let last_known_scroll_position = 0;
-let ticking = false;
 const navBox = document.querySelector('.nav');
 const scrollCounter = document.createElement('a');
 navBox.appendChild(scrollCounter);
+
+let last_known_scroll_position = 0;
+let ticking = false;
 
 function doSomething(scroll_pos) {
     scrollCounter.textContent = `Position: ${Math.round(scroll_pos)}`;
@@ -85,7 +89,27 @@ window.addEventListener('scroll', function(e) {
   }
 });
 
-// 
+// SELECT
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'x') {
+        navBox.style.width = '70%';
+        const secretInput = document.createElement('input');
+        secretInput.setAttribute('value', 'Highlight Me..');
+        secretInput.style.width = '20%'; 
+        navBox.prepend(secretInput);
+
+        secretInput.addEventListener('select', () => {
+            console.log('You have entered the secret bus page.');
+            logo.textContent = 'Secret Bus';
+            const navContainer = document.querySelector('.main-navigation').style.background = getRandomColor();
+            document.body.style.background = getRandomColor();
+        });
+    }
+});
+
+
+
+
 
 // Using preventDefault to prevent page refresh
 links.forEach(link => link.addEventListener('click', function (event) {
