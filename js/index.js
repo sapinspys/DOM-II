@@ -114,6 +114,8 @@ window.addEventListener('keydown', (event) => {
         secretInput.style.width = '20%'; 
         navBox.prepend(secretInput);
 
+        // GREENSOCK STRETCH OBJECTIVE 
+
         let tween = TweenMax.to(logo, 1, { // 1 is animation duration
             x: -100, // move right 100px
             autoAlpha: 0, // fade out to opacity 0 and visibility hidden
