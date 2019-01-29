@@ -24,7 +24,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 ## Task 3: Create Unique Event Listeners
 
-* [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
+* [X] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use: 
 	* [X] `mouseover`
 	* [X] `keydown`
 	* [X] `click`
@@ -43,7 +43,7 @@ Using the 10 unique events, find ways to update the DOM in creative ways. For ex
 
 ## Stretch Task:
 
-* [ ] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
+* [X] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
 
   
 
